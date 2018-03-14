@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <script src="./JS/main.js"></script>-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            height: 2000px;
+            width: 2000px;
+            background-color: yellow;
+            padding-top: 1000px;
+            padding-left: 1000px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .hello{
+            position: fixed;
+            top:0;
+            right: 0;
+            width: 200px;
+            height: 150px;
+            background-color: #ccc;
+        }
+    </style>
+    <script src="./JS/lib/jquery.min.js"></script>
+    <script src="./JS/zhyUtil.js"></script>
+    <script>
+        window.onload = function () {
+            var $box = $('.box');
+            $(window).scroll(function () {
+                /*    var distanceBottom = zUtil.getDistance($('.box')).bottom;
+                 console.log(distanceBottom);
+                 if (distanceBottom >= -$('.box').outerHeight()) {
+                 // alert('元素在页面中出现');
+                 }*/
+                /*console.log('距离浏览器下边框:'+parseInt($box.distance().bottom));
+                console.log('距离浏览器左边框:'+parseInt($box.distance().left));
+                console.log('距离浏览器上边框:'+parseInt($box.distance().top));
+                console.log('====================================================');*/
+                $box.distance($('.hello'));
+            });
+        };
+    </script>
+</head>
+<body>
+<h2 id="test">welcome！！！</h2>
+<div class="hello"></div>
+<div class="page">
+    <div class="box">测试</div>
+</div>
+</body>
+</html>
